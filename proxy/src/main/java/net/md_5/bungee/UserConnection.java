@@ -292,7 +292,8 @@ public final class UserConnection implements ProxiedPlayer
 
         final BungeeServerInfo target = (BungeeServerInfo) event.getTarget(); // Update in case the event changed target
 
-        if (target == null) {
+        if ( target == null )
+        {
             return;
         }
 

@@ -2,7 +2,6 @@ package net.md_5.bungee.api.event;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NonNull;
 import lombok.ToString;
 import net.md_5.bungee.api.ServerConnectRequest;
 import net.md_5.bungee.api.config.ServerInfo;
