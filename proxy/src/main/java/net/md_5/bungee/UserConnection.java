@@ -250,7 +250,7 @@ public final class UserConnection implements ProxiedPlayer
 
     public void connect(ServerInfo info, final Callback<Boolean> callback, final boolean retry, ServerConnectEvent.Reason reason)
     {
-        Preconditions.checkNotNull( info, "info" );
+        // Preconditions.checkNotNull( info, "info" );
 
         ServerConnectRequest.Builder builder = ServerConnectRequest.builder().retry( retry ).reason( reason ).target( info );
         if ( callback != null )
@@ -291,6 +291,10 @@ public final class UserConnection implements ProxiedPlayer
         }
 
         final BungeeServerInfo target = (BungeeServerInfo) event.getTarget(); // Update in case the event changed target
+
+        if (target == null) {
+            return;
+        }
 
         if ( getServer() != null && Objects.equals( getServer().getInfo(), target ) )
         {

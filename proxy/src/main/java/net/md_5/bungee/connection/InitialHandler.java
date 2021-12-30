@@ -21,11 +21,7 @@ import net.md_5.bungee.BungeeServerInfo;
 import net.md_5.bungee.EncryptionUtil;
 import net.md_5.bungee.UserConnection;
 import net.md_5.bungee.Util;
-import net.md_5.bungee.api.AbstractReconnectHandler;
-import net.md_5.bungee.api.Callback;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.Favicon;
-import net.md_5.bungee.api.ServerPing;
+import net.md_5.bungee.api.*;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ListenerInfo;
@@ -529,6 +525,7 @@ public class InitialHandler extends PacketHandler implements PendingConnection
 
                             ch.getHandle().pipeline().get( HandlerBoss.class ).setHandler( new UpstreamBridge( bungee, userCon ) );
                             bungee.getPluginManager().callEvent( new PostLoginEvent( userCon ) );
+
                             ServerInfo server;
                             if ( bungee.getReconnectHandler() != null )
                             {

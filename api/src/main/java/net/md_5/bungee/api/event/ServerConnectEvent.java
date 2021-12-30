@@ -29,7 +29,6 @@ public class ServerConnectEvent extends Event implements Cancellable
     /**
      * Server the player will be connected to.
      */
-    @NonNull
     private ServerInfo target;
     /**
      * Reason for connecting to a new server.

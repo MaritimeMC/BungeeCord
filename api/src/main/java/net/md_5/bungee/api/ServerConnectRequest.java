@@ -46,7 +46,6 @@ public class ServerConnectRequest
     /**
      * Target server to connect to.
      */
-    @NonNull
     private final ServerInfo target;
     /**
      * Reason for connecting to server.
